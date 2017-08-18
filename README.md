@@ -17,7 +17,7 @@ To build this webpage I used a variety of different frameworks and sources:
 * Some of the images I used were courtesy of [unsplash.io](https://unsplash.com/ "Unsplash")
 * The social media icons are from an awesome artist online called [Good Stuff](https://goodstuffnononsense.com/ "Good Stuff") who, despite not asking for attribution, will get it because they absolutely deserve it.
 
-## Fonts
+### Fonts
 * [Font Awesome](fontawesome.io "Font Awesome")
 * [Google Fonts](https://fonts.google.com "Google Fonts") - Roboto
 
