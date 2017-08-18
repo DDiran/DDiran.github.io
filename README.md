@@ -1,5 +1,5 @@
 # Resume Website | ddlawson.com
-Like my website? You're free to copy it and customize it as much as you want, so long as you provide attribution *(see MIT License)*. While I have minified all html, css and javascript, you can find the original, un-minified files in the "original" folder above.
+Like my website? You're free to copy it and customize it as much as you want, so long as you provide attribution *(see [MIT License](https://github.com/DDiran/DDiran.github.io/blob/master/LICENSE.md "MIT License"))*. While I have minified all html, css and javascript, you can find the original, un-minified files in the [Original](https://github.com/DDiran/DDiran.github.io/tree/master/original "Original folder in Github") folder.
 
 ## Attribution
 To build this webpage I used a variety of different frameworks and sources:
