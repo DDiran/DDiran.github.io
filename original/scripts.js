@@ -26,3 +26,17 @@ jQuery('img.svg').each(function(){
     }, 'xml');
 
 });
+
+$('.lang_selector').click(function(){
+  var clickedId = $(this).children(':first').attr('src');
+
+  var lastChild = $('div#language-select > i:last-child');
+  var lastLink = $('div#language-select > a:last-of-type');
+
+  //Insert current clicked element to last position
+  lastChild.before($(this));
+
+  //Insert the element that was last before the first element
+  $('div#language-select > a:first-of-type').before(lastLink);
+
+});

@@ -104,6 +104,51 @@ header, .grey-bg {
 }
 
 /*-------------------------------*/
+/* Language Selection Panel      */
+/*-------------------------------*/
+
+#language-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: ;
+  width: 150px;
+  height: 50px;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  position: fixed;
+  top: 150px;
+  left: -90px;
+  border-radius: 0 1em 1em 0;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+#language-select img, #language-select i {
+  padding-left: 10px;
+}
+
+#language-select i {
+  padding-right: 5px;
+}
+
+#language-select:hover {
+  left: -5px;
+}
+
+.fa.fa-angle-left.fa-2x {
+  display: none;
+}
+
+#language-select:hover .fa.fa-angle-right.fa-2x {
+  display: none;
+}
+
+#language-select:hover .fa.fa-angle-left.fa-2x {
+  display: flex;
+}
+
+/*-------------------------------*/
 /* Buttons                       */
 /*-------------------------------*/
 
@@ -281,4 +326,7 @@ footer.page-footer {
   .card-title.text-center {
     font-size: initial;
     }
+  #language-select {
+    top: 70px;
+  }
 }
