@@ -10,6 +10,7 @@ To build this webpage I used a variety of different frameworks and sources:
 * [Modern Design Bootstrap | Free](https://mdbootstrap.com/ "MDBFree")
 * [Wow.js](http://mynameismatthieu.com/WOW/ "Wow.js")
 * [Popper](https://popper.js.org/ "Popper")
+* [CSS Map Plugin](https://cssmapsplugin.com "CSS Map Plugin")
 * [Google Analytics](https://analytics.google.com "Google Analytics")
 * [Translate.js](http://www.openxrest.com/translatejs/ "Translate.js")
 * [Browser Update](https://browser-update.org/ "Browser Update")
@@ -23,4 +24,10 @@ To build this webpage I used a variety of different frameworks and sources:
 * [Google Fonts](https://fonts.google.com "Google Fonts") - Roboto
 
 ### Hosting
-* Free hosting provided by GitHub
+* Free hosting provided by GitHub Pages
+
+## Known Issues
+A few issues I'm aware of with the website. I will be looking into them in the future. In the meantime however if you know why these are going wrong be sure to drop me a message!
+
+* When changing language the markers on the map change position.
+* When changing language repeatedly (many times in a row), the selected language flag no longer moves to the end.

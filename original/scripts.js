@@ -1,3 +1,7 @@
+// ###################################################
+// REPLACE IMG WITH SVG | <3 TO STACKOVERFLOW FOR THIS
+// ###################################################
+
 jQuery('img.svg').each(function(){
     var $img = jQuery(this);
     var imgID = $img.attr('id');
@@ -26,6 +30,46 @@ jQuery('img.svg').each(function(){
     }, 'xml');
 
 });
+
+
+// ###################################################
+// IF PAGE IS REFRESHED BRING TO TOP
+// ###################################################
+
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
+
+// ###################################################
+// INTERACTIVE MAP | CREDIT TO CSS MAPS PLUGIN
+// ###################################################
+
+$(document).ready(function(){
+
+// CSSMap;
+$("#map-continents").CSSMap({
+  "size": 960,
+  "mapStyle": "vintage",
+  "tooltips": false,
+  "responsive": "auto",
+  "tapOnce": true,
+  "pins": {
+    "enable": true,
+    "pinsId": "#markers",
+    "mapSize": 960,
+    "markerPosition": "middle",
+    "tooltipPosition": "top",
+    "tooltipOnClick": false,
+    "clickableRegions": true
+  }
+});
+// END OF THE CSSMap;
+
+});
+
+// ###################################################
+// CHANGE LANGUAGE | CREDIT TO TRANSLATE.JS
+// ###################################################
 
 $('.lang_selector').click(function(){
   var clickedId = $(this).children(':first').attr('src');

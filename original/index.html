@@ -14,9 +14,10 @@
 
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/mdb.min.css" rel="stylesheet">
-	<link href="css/style.min.css" rel="stylesheet">
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/mdb.min.css" rel="stylesheet">
+    <link type="text/css" href="css/cssmap-continents.css" rel="stylesheet" media="screen">
+	<link type="text/css" href="css/style.min.css" rel="stylesheet">
 
 	<style rel="stylesheet">
 	.view {
@@ -169,7 +170,53 @@
             </div>
     	</div>
     </section>
-    <section>
+    <section class="hidden-sm-down">
+        <div class="container">
+            <div class="divider-new pt-8">
+                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_new" data-wow-delay="0.5s">My background</h2>
+            </div>
+        </div>
+            <div id="map-continents" class="mx-auto wow fadeIn" data-wow-delay="0.2s">
+                <ul class="continents">
+                      <li class="c1"><a href="#africa">Africa</a></li>
+                      <li class="c2"><a href="#asia">Asia</a></li>
+                      <li class="c3"><a href="#australia">Australia</a></li>
+                      <li class="c4"><a href="#europe">Europe</a></li>
+                      <li class="c5"><a href="#north-america">North America</a></li>
+                      <li class="c6"><a href="#south-america">South America</a></li>
+                </ul>
+            </div>
+                    <div id="markers" class="wow fadeIn" data-wow-delay="0.2s">
+                     <ul class="cssmap-pins">
+                      <li class="cssmap-pin" data-cssmap-coords="445,175">
+                       <div class="cssmap-tooltip-content">
+                        <p class="lead text-center trn">United Kingdom</p><br><p class="trn" data-trn-key="uk_story">Between my studies and my time in employment I spent five unforgettable years here.</p>
+                       </div>
+                       <a href="#" class="cssmap-marker"><img src="img/pin.png" width="20" height="25" alt="pin"/></a>
+                      </li>
+                      <li class="cssmap-pin" data-cssmap-coords="470,195">
+                       <div class="cssmap-tooltip-content">
+                        <p class="lead text-center trn">Italy</p><br><p class="trn" data-trn-key="italy_story">Where I spent the majority of my life, between my education and now employment. I am currently based here.</p>
+                       </div>
+                       <a href="#" class="cssmap-marker"><img src="img/pin.png" width="20" height="25" alt="pin"/></a>
+                      </li>
+                      <li class="cssmap-pin" data-cssmap-coords="549,312">
+                       <div class="cssmap-tooltip-content">
+                        <p class="lead text-center trn">Kenya</p><br><p class="trn" data-trn-key="kenya_story">I was born here in Mombasa in 1993 and I spent my early childhood running around the white sandy beaches of Diani.</p>
+                       </div>
+                       <a href="#" class="cssmap-marker"><img src="img/pin.png" width="20" height="25" alt="pin"/></a>
+                      </li>
+                      <li class="cssmap-pin" data-cssmap-coords="542,325">
+                       <div class="cssmap-tooltip-content">
+                        <p class="lead text-center trn">Tanzania</p><br><p class="trn" data-trn-key="tanzania_story">Where half of my family currently resides. I have been coming here regularly since 2003.</p>
+                       </div>
+                       <a href="#" class="cssmap-marker"><img src="img/pin.png" width="20" height="25" alt="pin"/></a>
+                      </li>
+                     </ul>
+                    </div>
+        </div>
+    </section>
+    <section class="grey-bg">
     <div class="container">
             <div class="divider-new pt-8">
                 <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_seven" data-wow-delay="0.2s">A few of my favorite things</h2>
@@ -258,9 +305,8 @@
                 </div>
     	</div>
     </section>
-    <section class="grey-bg">
+    <section class="very-light-blue" style="margin-top:-45px">
     	<div class="container">
-
             <div class="divider-new pt-8">
                 <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_eight" data-wow-delay="0.2s">My daily inspiration</h2>
             </div>
@@ -369,7 +415,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.translate.js"></script>
-    <script type="text/javascript" src="js/translation.dictionary.min.js"></script>
+    <script type="text/javascript" src="js/translation.dictionary.js"></script>
+    <script type="text/javascript" src="js/jquery.cssmap.min.js"></script>
     <script type="text/javascript" src="js/scripts.min.js"></script>
 
     <script>

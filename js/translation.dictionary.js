@@ -229,7 +229,48 @@ $(function() {
     	en: "Like my website? You can fork it on <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!",
     	it: "Ti piace il mio sito? Puoi scaricarlo gratuitamente su <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!",
     	fr: "Aimez-vous mon site? Téléchargez le gratuitemente sur <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!"
-    }
+    },
+    "United Kingdom": {
+        it: "Regno Unito",
+        fr: "Royaume-Uni"
+    },
+    "Italy": {
+        it: "Italia",
+        fr: "Italie"
+    },
+    "Kenya": {
+        it: "Kenia",
+        fr: "Kenya"
+    },
+    "Tanzania": {
+        it: "Tanzania",
+        fr: "Tanzanie"
+    },
+    title_new: {
+        en: "My background",
+        it: "La mia storia",
+        fr: "Mon histoire"
+    },
+    uk_story: {
+        en: "Between my undergrad studies and the my time in employment I spent five unforgettable years here.",
+        it: "Ho passato cinque anni indimenticabili in questo paese tra gli studi universitari e il lavoro.",
+        fr: "J'ai passé cinq années inoubliables dans ce pays parmi les études et le travail."
+    },
+    italy_story: {
+        en: "Where I spent the majority of my life, between my education and now employment. I am currently based here.",
+        it: "Dove ho passato la maggior parte della mia vita. Al momento sono basato qui a Torino.",
+        fr: "Où je passais la majeure partie de ma vie. Je suis actuellement à Turin."
+    },
+    kenya_story: {
+        en: "I was born here in Mombasa in 1993 and I spent my early childhood running around the white sandy beaches of Diani.",
+        it: "Sono nato qui a Mombasa nel 1993, trascorrendo la mia infanzia spassegiando nelle spiagge di Diani.",
+        fr: "Je suis né ici à Mombasa en 1993 et ​​j'ai passé mon enfance autour de la plage de Diani."
+    },
+    tanzania_story: {
+        en: "Where half of my family currently resides. I have been coming here regularly since 2003, and have worked for three different organisations based here.",
+        it: "Dove abita attualmente la metà della mia famiglia. Visito regolarmente dal 2003 e ho anche lavorato per tre organizzazioni che sono basate qui.",
+        fr: "C'est ici que la moitié de ma famille vit. J'ai visité régulièrement depuis 2003. J'ai aussi travaillé pour trois organisations ici."
+    },
   };
 
   var _t = $('body').translate({lang: "en", t: t});
