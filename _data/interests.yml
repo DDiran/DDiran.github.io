@@ -1,0 +1,48 @@
+- type: large
+  img: family.jpg
+  name: Family
+
+- type: large
+  img: music.jpg
+  name: Music
+  wow_delay: "0.4s"
+
+- type: large
+  img: snowboarding.jpg
+  name: Snowboarding
+  wow_delay: "0.6s"
+
+- type: large
+  img: mountains.jpg
+  name: Trekking
+  wow_delay: "0.8s"
+
+- type: small
+  img: travel.jpg
+  name: Travel
+  wow_delay: "0.2s"
+
+- type: small
+  img: beachlife.jpg
+  name: Beach Life
+  wow_delay: "0.4s"
+
+- type: small
+  img: football.jpg
+  name: Football
+  wow_delay: "0.5s"
+
+- type: small
+  img: photography.jpg
+  name: Photos
+  wow_delay: "0.6s"
+
+- type: small
+  img: cuisine.jpg
+  name: Cuisine
+  wow_delay: "0.7s"
+
+- type: small
+  img: kindle.jpg
+  name: Kindle
+  wow_delay: "0.8s"

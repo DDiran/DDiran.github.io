@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"base",
+				"baseurl"
+			],
+			[
 				"back",
 				"background-position"
 			],
@@ -16,9 +20,11 @@
 	"buffers":
 	[
 		{
+			"file": "_layouts/homepage.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 30577,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -85,8 +91,29 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/ddiran/projects/ddlawson",
+		"/home/ddiran/projects/ddlawson/_data",
+		"/home/ddiran/projects/ddlawson/_layouts"
+	],
 	"file_history":
 	[
+		"/home/ddiran/projects/ddlawson/_config.yml",
+		"/home/ddiran/projects/ddlawson/_data/past_project.yml",
+		"/home/ddiran/projects/ddlawson/_data/current_projects.yml",
+		"/home/ddiran/projects/ddlawson/_data/authors.yml",
+		"/home/ddiran/projects/ddlawson/_data/interests.yml",
+		"/home/ddiran/projects/ddlawson/_data/pins.yml",
+		"/home/ddiran/projects/ddlawson/_data/quotes.yml",
+		"/home/ddiran/projects/ddlawson/CNAME",
+		"/home/ddiran/projects/ddlawson/original/index.html",
+		"/home/ddiran/projects/ddlawson/index.md",
+		"/home/ddiran/projects/ddlawson/_layouts/homepage.html",
+		"/home/ddiran/projects/ddlawson/index.html",
+		"/home/ddiran/projects/ddlawson/original/translation.dictionary.js",
+		"/home/ddiran/projects/ddlawson/assets/css/style.min.css",
+		"/home/ddiran/projects/ddlawson/.gitignore",
 		"/home/ddiran/projects/test-site/ddlawson.gemspec",
 		"/home/ddiran/projects/test-site/_config.yml",
 		"/home/ddiran/projects/test-site/README.md",
@@ -149,7 +176,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 130.0,
 		"where_history":
 		[
 		]
@@ -159,6 +186,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"relative_url",
+			"absolute_url",
+			"}}",
+			"{{",
+			"webfont",
+			"src",
+			" {{ /assets",
+			"{{ assets",
+			"{{ '//",
+			"{{ '",
+			"src",
 			"!important",
 			"multifieldpanel",
 			"index",
@@ -176,6 +214,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"site.baseurl_root",
+			"relative_url",
+			"}}\"",
+			"\"{{",
+			"{{ '/assets",
+			"{{ '/",
 			""
 		],
 		"reverse": false,
@@ -192,25 +236,26 @@
 			[
 				{
 					"buffer": 0,
+					"file": "_layouts/homepage.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 30577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								6770,
+								6770
 							]
 						],
 						"settings":
 						{
 							"bracket_highlighter.busy": false,
 							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.locations":
+							"bracket_highlighter.clone_locations":
 							{
 								"close":
 								{
@@ -225,69 +270,158 @@
 								{
 								}
 							},
-							"bracket_highlighter.regions":
+							"bracket_highlighter.clone_regions":
 							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6771,
+										6772
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6760,
+										6761
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content"
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
-							"default_dir": "/home/ddiran/projects/test-site",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -343,7 +477,7 @@
 	"project": "cv.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 90.0
 	},
 	"save_all_on_build": true,
 	"select_file":
