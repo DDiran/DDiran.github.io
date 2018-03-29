@@ -1,0 +1,389 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"inclu",
+				"inclusion_tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Anaconda Python Builder",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "package control",
+		"selected_items":
+		[
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"depend",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 551.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ddiran/projects/test-site/ddlawson.gemspec",
+		"/home/ddiran/projects/test-site/_config.yml",
+		"/home/ddiran/projects/test-site/README.md",
+		"/home/ddiran/projects/test-site/LICENSE.txt",
+		"/home/ddiran/projects/test-site/Gemfile",
+		"/home/ddiran/projects/test-site/_layouts/post.html",
+		"/home/ddiran/projects/test-site/_layouts/page.html",
+		"/home/ddiran/projects/test-site/_layouts/default.html",
+		"/home/ddiran/projects/test-site/_site/assets/main.css",
+		"/home/ddiran/projects/test-site/_site/assets/minima-social-icons.svg",
+		"/home/ddiran/projects/test-site/_site/about/index.html",
+		"/home/ddiran/projects/test-site/_site/index.html",
+		"/home/ddiran/projects/test-site/index.md",
+		"/home/ddiran/projects/thefestival.shop/home/templates/home/home_page.html",
+		"/home/ddiran/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/ddiran/projects/thefestival.shop/events/templates/events/event.html",
+		"/home/ddiran/projects/thefestival.shop/products/templates/products/category_index.html",
+		"/home/ddiran/projects/thefestival.shop/products/templates/products/product.html",
+		"/home/ddiran/projects/thefestival.shop/about/forms.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/templates/base.html",
+		"/home/ddiran/projects/thefestival.shop/articles/templates/articles/article.html",
+		"/home/ddiran/projects/thefestival.shop/articles/templates/articles/article_amp.html",
+		"/home/ddiran/projects/thefestival.shop/articles/models.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/static/css/article_amp.css",
+		"/home/ddiran/projects/thefestival.shop/fstvl/settings/base.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/settings/production.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/settings/dev.py",
+		"/home/ddiran/projects/barry/barry.py",
+		"/home/ddiran/projects/thefestival.shop/home/templatetags/fstvl_tags.py",
+		"/home/ddiran/projects/thefestival.shop/home/management/commands/clear_cache.py",
+		"/home/ddiran/projects/thefestival.shop/home/management/commands/test_email.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/templates/analytics.html",
+		"/home/ddiran/projects/thefestival.shop/fstvl/templates/top_menu.html",
+		"/home/ddiran/projects/thefestival.shop/.gitignore",
+		"/home/ddiran/projects/thefestival.shop/home/management/commands/gruntserver.py",
+		"/home/ddiran/projects/thefestival.shop/Gruntfile.js",
+		"/home/ddiran/projects/thefestival.shop/about/models.py",
+		"/home/ddiran/projects/thefestival.shop/fstvl/templates/500.html",
+		"/home/ddiran/projects/thefestival.shop/requirements.txt",
+		"/home/ddiran/projects/thefestival.shop/assets/js/index.js",
+		"/home/ddiran/projects/thefestival.shop/webpack.config.js",
+		"/home/ddiran/projects/thefestival.shop/package.json",
+		"/home/ddiran/projects/thefestival.shop/.npmrc",
+		"/home/ddiran/Desktop/python.py",
+		"/home/ddiran/Desktop/untitled.py",
+		"/home/ddiran/projects/thefestival.shop/.babelrc",
+		"/home/ddiran/projects/thefestival.shop/fstvl/static/js/webpack.config.js",
+		"/home/ddiran/projects/thefestival.shop/home/management/commands/update_prices.py",
+		"/home/ddiran/projects/thefestival.shop/products/models.py",
+		"/home/ddiran/projects/thefestival.shop/ssl_check.sh",
+		"/home/ddiran/projects/thefestival.shop/product_maintenance.sh",
+		"/home/ddiran/Downloads/db_backup.sh",
+		"/home/ddiran/.virtualenvs/fstvl/bin/postactivate",
+		"/home/ddiran/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/ddiran/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"!important",
+			"multifieldpanel",
+			"index",
+			"fieldrowpanel",
+			"validationerror",
+			"import",
+			"compress",
+			"djangoapp",
+			"djangoproject",
+			"NilaExpeditions"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"default_dir": "/home/ddiran/projects/test-site",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 184.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "cv.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
