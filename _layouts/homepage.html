@@ -10,7 +10,7 @@
     <meta name="keywords" content="Resume, CV, Portfolio, David D Lawson, David Lawson, Marketing">
     <meta name="author" content="David D Lawson">
 
-    <title>I'm David D Lawson</title>
+    <title>{{ site.t[page.lang].home }}</title>
 
     <link rel="shortcut icon" type="image/ico" href="{{ '/favicon.ico' | absolute_url }}"/>
     <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | absolute_url }}">
@@ -29,58 +29,22 @@
     }
     </style>
 
-<!--     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    {% comment %}{% include _analytics.html %}{% endcomment %}
 
-    ga('create', 'UA-65598869-1', 'auto');
-    ga('send', 'pageview');
-
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TB4FL3M');
-    </script> -->
-
-<!--     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-    window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#eaf7f7",
-          "text": "#5c7291"
-        },
-        "button": {
-          "background": "#56cbdb",
-          "text": "#ffffff"
-        }
-      },
-      "theme": "edgeless",
-      "position": "bottom-left",
-      "content": {
-        "message": "Hey there! I use cookies to get an idea of who is visiting my website and downloading my CV.",
-        "link": "Find out more about cookies."
-      }
-    })});
-    </script> -->
+    {% comment %}{% include _cookie_consent.html %}{% endcomment %}
 </head>
 
 <body>
-<!--     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB4FL3M"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    {% comment %}{% include _gtm.html %}{% endcomment %}
     <header>
         <section class="view intro-1 hm-black-strong">
             <div class="full-bg-img flex-center">
                 <div class="container">
                     <ul style="margin-top:-100px">
-                        <li><div class="fancy-line-two wow fadeIn" data-wow-delay="0.2s"><p class="trn lead mt-4 mb-2" data-trn-key="intro_salute">Hi I'm</p></div></li>
+                        <li><div class="fancy-line-two wow fadeIn" data-wow-delay="0.2s"><p class="trn lead mt-4 mb-2">{{ page.intro }}</p></div></li>
                         <li><img id="my-portrait" class="img-fluid rounded-circle mx-auto wow fadeIn" data-wow-delay="0.2s" src="{{ '/assets/img/david_lawson.jpg' | absolute_url }}" alt="David D Lawson" width="200"></li>
                         <li><h1 class="h1-responsive font-bold wow fadeIn" data-wow-delay="0.2s">David D Lawson</h1></li></li>
-                        <li><h5 class="h5-responsive font-bold wow fadeInDown text-uppercase trn" data-trn-key="subtitle" data-wow-delay="0.8s">{{ usp1 }} &middot; {{ usp2 }} &middot; {{ usp3 }}</h2></li>
+                        <li><h5 class="h5-responsive font-bold wow fadeInDown text-uppercase trn" data-wow-delay="0.8s">{{ page.usp1 }} &middot; {{ page.usp2 }} &middot; {{ page.usp3 }}</h2></li>
                     </ul>
                 </div>
             </div>
@@ -88,9 +52,10 @@
     </header>
 
     <div id="language-select">
-        <a class="lang_selector trn" href="#" role="button" data-value="fr"><img id="French" class="img-fluid rounded-circle img-btn" src="{{ '/assets/img/flags/fr.jpg' | absolute_url }}" alt="French"></a>
-        <a class="lang_selector trn" href="#" role="button" data-value="it"><img id="Italian" class="img-fluid rounded-circle img-btn" src="{{ '/assets/img/flags/it.jpg' | absolute_url }}" alt="Italian"></a>
-        <a class="lang_selector trn" href="#" role="button" data-value="en"><img id="English" class="img-fluid rounded-circle img-btn active" src="{{ '/assets/img/flags/en.jpg' | absolute_url }}" alt="English"></a>
+        {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' | reverse %}
+        {% for p in pages %}{% if p.url == page.url %}
+        <a class="lang_selector trn" href="{{ p.url }}" role="button"><img id="{{ p.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/assets/img/flags/{{ p.lang }}.jpg" alt="{{ p.lang_full }}"></a>
+        {% endif %}{% endfor %}
         <div id="arrows">
             <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
         </div>
@@ -101,18 +66,18 @@
             <div class="row wow bounceInUp" data-wow-delay="1s">
                 <div class="col-md-12">
                     <div class="jumbotron first">
-                        <div class="divider-new no-margin"><h2 class="h2-responsive trn" data-trn-key="title_one">My current projects</h2></div>
-                        {% for project in site.data.current_projects %}
+                        <div class="divider-new no-margin"><h2 class="h2-responsive trn">{{ page.current }}</h2></div>
+                        {% for project in site.data[page.lang].current_projects %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
                                <img class="img-fluid" src="{{ site.baseurl }}/assets/img/logos/{{ project.img }}" alt="{{ project.img_alt }}" width="200">
                             </div>
                             <div class="col-md-6 center-on-small-only">
                                 <div>
-                                    <a target="_blank" href="{{ project.url }}"><h4 class="h4-responsive text-uppercase">Nila Expeditions</h4></a>
-                                    <h4 class="h4-responsive trn" data-trn-key="role_one">{{ project.company }}</h4>
-                                    <h5 class="h5-responsive trn" data-trn-key="location_one">{{ project.location }}</h5>
-                                    <p class="trn" data-trn-key="content_one">{{ project.description }}</p>
+                                    <a target="_blank" href="{{ project.url }}"><h4 class="h4-responsive text-uppercase">{{ project.company }}</h4></a>
+                                    <h4 class="h4-responsive trn">{{ project.role }}</h4>
+                                    <h5 class="h5-responsive trn">{{ project.location }}</h5>
+                                    <p class="trn">{{ project.description }}</p>
                                </div>
                             </div>
                         </div>
@@ -124,19 +89,19 @@
             <div class="row wow fadeIn" data-wow-delay="0.2s">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <div class="divider-new no-margin"><h2 class="h2-responsive trn" data-trn-key="title_two">What I've worked on</h2></div>
-                        {% for project in site.data.past_projects %}
+                        <div class="divider-new no-margin"><h2 class="h2-responsive trn">{{ page.past }}</h2></div>
+                        {% for project in site.data[page.lang].past_projects %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
                                 <img class="img-fluid" src="{{ baseurl }}/assets/img/logos/{{ project.img }}" alt="{{ project.img_alt}}" width="200">
                             </div>
                             <div class="col-md-6 center-on-small-only">
                                 <div>
-                                    <a target="_blank" href="{{ project.url }}"><h4 class="h4-responsive text-uppercase">Something Different Wholesale</h4></a>
-                                    <h4 class="h4-responsive trn" data-trn-key="role_two">{{ project.role }}</h4>
+                                    <a target="_blank" href="{{ project.url }}"><h4 class="h4-responsive text-uppercase">{{ project.company }}</h4></a>
+                                    <h4 class="h4-responsive trn">{{ project.role }}</h4>
                                     {% if project.other_role %}<h4 class="h4-responsive trn">{{ project.other_role }}</h4>{% endif %}
-                                    <h5 class="h5-responsive trn" data-trn-key="location_two">{{ project.location }}</h5>
-                                    <p class="trn" data-trn-key="content_two">{{ project.description }}</p>
+                                    <h5 class="h5-responsive trn">{{ project.location }}</h5>
+                                    <p class="trn">{{ project.description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -148,8 +113,8 @@
            <div class="row wow fadeIn" data-wow-delay="0.2s">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <div class="divider-new no-margin"><h2 class="h2-responsive trn" data-trn-key="title_five">Where I studied</h2></div>
-                        {% for university in site.data.edu_history %}
+                        <div class="divider-new no-margin"><h2 class="h2-responsive trn">{{ page.edu }}</h2></div>
+                        {% for university in site.data[page.lang].edu_history %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
                                 <img class="img-fluid" src="{{ baseurl }}/assets/img/logos/{{ university.img }}" alt="{{ university.img_alt }}" width="200">
@@ -157,9 +122,9 @@
                             <div class="col-md-6 center-on-small-only">
                                 <div>
                                     <a target="_blank" href="{{ university.url }}"><h4 class="h4-responsive text-uppercase">{{ university.name }}</h4></a>
-                                    <h4 class="h4-responsive trn" data-trn-key="role_five">{{ university.degree }}</h4>
-                                    <h5 class="h5-responsive trn" data-trn-key="location_five">{{ university.location }}</h5>
-                                    <p class="trn" data-trn-key="content_five">{{ university.description }}</p>
+                                    <h4 class="h4-responsive trn">{{ university.degree }}</h4>
+                                    <h5 class="h5-responsive trn">{{ university.location }}</h5>
+                                    <p class="trn">{{ university.description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -170,11 +135,11 @@
             <div class="row wow fadeIn" data-wow-delay="0.2s">
                 <div class="col-md-12 center-on-small-only">
                     <div class="jumbotron text-center last">
-                        <div class="divider-new no-margin"><h2 class="h2-responsive trn" data-trn-key="title_six">Additional information</h2></div>
-                        <p class="trn" data-trn-key="content_six">{{ additional_info }}</p>
+                        <div class="divider-new no-margin"><h2 class="h2-responsive trn">{{ page.download }}</h2></div>
+                        <p class="trn">{{ page.additional_info }}</p>
                         <br>
-                        <a target="_blank" href="{{ page.cv_download_url }}" class="btn btn-outline-unique trn" data-trn-key="download" rel="nofollow">Download CV <i class="fa fa-download"></i></a>
-                        <a target="_blank" href="{{ page.linkedin_url }}" class="btn btn-unique btn-ptc trn" data-trn-key="learn" rel="nofollow">Learn More <i class="fa fa-linkedin"></i></a>
+                        <a target="_blank" href="{{ page.cv_download_url }}" class="btn btn-outline-unique trn" rel="nofollow">{{ page.d_text }} <i class="fa fa-download"></i></a>
+                        <a target="_blank" href="{{ page.linkedin_url }}" class="btn btn-unique btn-ptc trn" rel="nofollow">{{ page.m_text }} <i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -183,7 +148,7 @@
     <section class="hidden-sm-down">
         <div class="container">
             <div class="divider-new pt-8">
-                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_new" data-wow-delay="0.5s">My background</h2>
+                <h2 class="h2-responsive wow fadeIn trn" data-wow-delay="0.5s">{{ page.background }}</h2>
             </div>
         </div>
             <div id="map-continents" class="mx-auto wow fadeIn" data-wow-delay="0.2s">
@@ -198,10 +163,10 @@
             </div>
                     <div id="markers" class="wow fadeIn" data-wow-delay="0.2s">
                      <ul class="cssmap-pins">
-                        {% for pin in site.data.pins %}
+                        {% for pin in site.data[page.lang].pins %}
                       <li class="cssmap-pin" data-cssmap-coords="{{ pin.coords }}">
                        <div class="cssmap-tooltip-content">
-                        <p class="lead text-center trn">{{ pin.name }}</p><br><p class="trn" data-trn-key="uk_story">{{ pin.description }}</p>
+                        <p class="lead text-center trn">{{ pin.name }}</p><br><p class="trn">{{ pin.description }}</p>
                        </div>
                        <a href="#" class="cssmap-marker"><img src="{{ '/assets/img/pin.png' | absolute_url }}" width="20" height="25" alt="pin"/></a>
                       </li>
@@ -213,10 +178,10 @@
     <section class="grey-bg">
     <div class="container">
             <div class="divider-new pt-8">
-                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_seven" data-wow-delay="0.2s">A few of my favorite things</h2>
+                <h2 class="h2-responsive wow fadeIn trn" data-wow-delay="0.2s">{{ page.favourite }}</h2>
             </div>
                 <div class="row pt-3 pb-8" id="gallery">
-                    {% for interest in site.data.interests %}
+                    {% for interest in site.data[page.lang].interests %}
                     <div class="col-md-{% if interest.type == 'large' %}3{% else %}2{% endif %} mb-r zoom">
                         <div class="card wow fadeIn" {% if interest.wow_delay %}data-wow-delay="{{ interest.wow_delay }}"{% endif %}>
                             <img class="img-fluid" src="{{ baseurl }}/assets/img/activities/{{ interest.img }}" alt="{{ interest.name }}">
@@ -232,14 +197,14 @@
     <section class="very-light-blue" style="margin-top:-45px">
         <div class="container">
             <div class="divider-new pt-8">
-                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_eight" data-wow-delay="0.2s">My daily inspiration</h2>
+                <h2 class="h2-responsive wow fadeIn trn" data-wow-delay="0.2s">{{ page.inspiration }}</h2>
             </div>
 
             <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
 
             <div id="fade-quote-carousel" class="carousel slide wow fadeIn" data-wow-delay="0.2s" data-ride="carousel" data-interval="5000">
               <div class="carousel-inner">
-                {% for author in site.data.authors %}
+                {% for author in site.data[page.lang].authors %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <blockquote class="mx-auto">
                         <p class="trn">"{{ author.quote }}" <br><small>{{ author.name }}</small></p>
@@ -262,10 +227,10 @@
     <section>
         <div class="container">
             <div class="divider-new pt-8 pb-2">
-                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_nine" data-wow-delay="0.2s">We live in a world defined by brands</h2>
+                <h2 class="h2-responsive wow fadeIn trn" data-wow-delay="0.2s">{{ page.brands }}</h2>
             </div>
             <div class="text-center pb-8">
-                <p class="lead mb-5 wow fadeInDown trn" data-wow-delay="0.4s">Here's a (very) small sample of some of the brands I love.</p>
+                <p class="lead mb-5 wow fadeInDown trn" data-wow-delay="0.4s">{{ page.brands_info }}</p>
                 <img class="img-fluid wow fadeIn" data-wow-delay="0.8s" src="{{ '/assets/img/logos/LoveBrands.jpg' | absolute_url }}" alt="Brands that I love">
             </div>
         </div>
@@ -273,11 +238,11 @@
     <footer class="page-footer center-on-small-only">
         <div class="container">
             <div class="divider-new pt-8 pb-2">
-                <h2 class="h2-responsive wow fadeIn trn" data-trn-key="title_ten" data-wow-delay="0.2s">Let's get in touch</h2>
+                <h2 class="h2-responsive wow fadeIn trn" data-wow-delay="0.2s">{{ page.contact }}</h2>
             </div>
             <div class="row">
                 <div class="col-12 text-center wow fadeIn" data-wow-delay="0.2s">
-                    <p class="trn">I'm always open to new opportunities - If you want to get in touch feel free to use any of the links below!</p>
+                    <p class="trn">{{ page.contact_info }}</p>
                     <br>
                     <div class="social-icons pb-5 mb-5">
                         <a class="wow fadeIn" data-wow-delay="0.4s" href="mailto:ddiranlawson@outlook.com"><img id="email" class="img-fluid svg social-link" src="{{ '/assets/img/svg/envelope.svg' | absolute_url }}" alt="Email"></a>
@@ -289,7 +254,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container-fluid">
-                <p class="trn" data-trn-key="copyright">Like my website? You can fork it on <a href="https://github.com/DDiran/DDiran.github.io">GitHub<a/>!</p>
+                <p class="trn">{{ page.copyright }}</p>
             </div>
         </div>
     </footer>
@@ -298,8 +263,6 @@
     <script type="text/javascript" src="{{ '/assets/js/popper.min.js' | absolute_url }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/bootstrap.min.js' | absolute_url }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/mdb.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/jquery.translate.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/translation.dictionary.js' | absolute_url }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/jquery.cssmap.min.js' | absolute_url }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/scripts.min.js' | absolute_url }}"></script>
 

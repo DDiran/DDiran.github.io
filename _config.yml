@@ -1,5 +1,12 @@
 name: I'm David D Lawson
 title: David D Lawson
+t:
+  en:
+    home: "I'm David D Lawson"
+  it:
+    home: "Sono David D Lawson"
+  fr:
+    home: "Je suis David D Lawson"
 
 ### WEBSITE URL SETTINGS
 ## Development 

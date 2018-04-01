@@ -1,0 +1,31 @@
+- name: Kelly Johnson
+  quote: Simplicity is the ultimate sophistication.
+  img: kelly_johnson.jpg
+
+- name: Robert Herjavec
+  quote: A goal without a timeline is just a dream.
+  img: robert_herjavec.jpg
+
+- name: Kevin Kruse
+  quote: Life is about making an impact, not making an income.
+  img: kevin_kruse.jpg
+
+- name: Danielle LaPorte
+  quote: Launch and learn. Everything is progress.
+  img: danielle_laporte.jpg
+
+- name: Jim Rohn
+  quote: Discipline is the bridge between goals and accomplishment.
+  img: jim_rohn.jpg
+
+- name: Thomas Edison
+  quote: I have not failed. I've just found 10,000 ways that won't work.
+  img: thomas_edison.jpg
+
+- name: Mark Cuban
+  quote: All you need is a laptop and you can pretty much create almost any type of company.
+  img: mark_cuban.jpg
+
+- name: Isaac Newton
+  quote: If I have seen further it is by standing on the shoulders of giants.
+  img: isaac_newton.jpg

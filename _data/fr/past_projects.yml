@@ -1,0 +1,30 @@
+- company: Something Different Wholesale
+  url: https://www.somethingdifferentwholesale.co.uk
+  role: Project Manager | 2015-2016
+  other_role: Marketing Coordinator | Summer 2014
+  location: Swansea, United Kingdom
+  description: >
+    I had the pleasure of working for SDW on two separate occasions, first as a marketing intern and then after graduation as a tech project manager.
+    I'm infinitely grateful for the opportunities I was given here and the mentorship I received from the company director, lead project manager and marketing manager.
+  img: SDW.jpg
+  img_alt: Something Different Wholesale Logo
+
+- company: Intimate Places Tanzania
+  url: http://www.intimate-places.com
+  role: Marketing Intern | Summer 2013
+  location: Arusha, Tanzania
+  description: >
+    Initially, I re-implemented the same stock management system as I had for UZT the previous year and trained the operational staff on it's usage.
+    I then took on a more marketing-oriented role by updating and modernizing the IP website and managing their social media.
+  img: IP.jpg
+  img_alt: Intimate Places Tanzania Logo
+
+- company: Upper Zonal Trading
+  url: http://www.uzt.co.tz/home.html
+  role: IT &amp; Operations Consultant | Summer 2012
+  location: Arusha &amp; Dar Es Salaam, Tanzania
+  description: >
+    My time at UZT was invaluable as it was my first experience in a professional environment.
+    I worked closely with the two operations managers to implement an electronic stock management system across multiple branches of the organisation.
+  img: UZT.jpg
+  img_alt: Upper Zonal Trading Logo
