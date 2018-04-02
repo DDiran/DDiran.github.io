@@ -12,6 +12,10 @@
 
     <title>{{ site.t[page.lang].home }}</title>
 
+    {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+    {% for p in pages %}
+      <link rel="alternate" hreflang="{{ p.lang }}" href="{{ p.url }}" />
+    {% endfor %}
     <link rel="shortcut icon" type="image/ico" href="{{ '/favicon.ico' | absolute_url }}"/>
     <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | absolute_url }}">
     <link type="text/css" href="{{ '/assets/css/bootstrap.min.css' | absolute_url }}" rel="stylesheet">
@@ -52,10 +56,11 @@
     </header>
 
     <div id="language-select">
-        {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' | reverse %}
-        {% for p in pages %}{% if p.url == page.url %}
+        {% assign pages=site.pages | where:"ref", page.ref %}
+        {% for p in pages %}{% if p.url == page.url %}{% assign clang = p %}{% else %}
         <a class="lang_selector trn" href="{{ p.url }}" role="button"><img id="{{ p.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/assets/img/flags/{{ p.lang }}.jpg" alt="{{ p.lang_full }}"></a>
         {% endif %}{% endfor %}
+        <a class="lang_selector trn" href="{{ clang.url }}" role="button"><img id="{{ clang.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/assets/img/flags/{{ clang.lang }}.jpg" alt="{{ clang.lang_full }}"></a>
         <div id="arrows">
             <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
         </div>
