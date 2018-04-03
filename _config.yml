@@ -1,5 +1,8 @@
+### Site Settings
 name: I'm David D Lawson
 title: David D Lawson
+
+### Multilingual Settings
 t:
   en:
     home: "I'm David D Lawson"
@@ -8,13 +11,32 @@ t:
   fr:
     home: "Je suis David D Lawson"
 
-### WEBSITE URL SETTINGS
-## Development 
+### Website URL Settings
+# Development 
 url: ""
 baseurl: ""
-## Production
+# Production
 # url: http://ddlawson.com
 # baseurl: http://ddlawson.com
 
-### OTHER SETTINGS
+### Exclude Settings
+exclude: [
+# folders
+'node_modules',
+'original',
+'licenses',
+#'assets',
+# files
+'Gemfile',
+'Gemfile.lock',
+'Gruntfile.js',
+'LICENSE.md',
+'README.md',
+'cv.sublime-project',
+'cv.sublime-workspace',
+'package.json',
+'package-lock.json'
+]
+
+### Other Settings
 markdown: kramdown
