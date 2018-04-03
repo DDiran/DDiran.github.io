@@ -1,5 +1,9 @@
 'use strict';
 
+var jekyllConditionalWrapOpen = /\{\% if[^}]+\%\}/;
+var jekyllConditionalWrapClose = /\{\%[^}]+endif \%\}/;
+var jekyllConditionalWrapPair = [jekyllConditionalWrapOpen, jekyllConditionalWrapClose];
+
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
@@ -12,11 +16,14 @@ module.exports = function (grunt) {
 
         // shell commands for use in Grunt tasks
         shell: {
-            jekyllRun: {
+            jekyllBuildNServe: {
                 command: 'bundle exec jekyll serve'
             },
             jekyllBuild: {
-                command: 'bundle exec'
+                command: 'bundle'
+            },
+            jekyllServe: {
+                command: 'jekyll serve'
             }
         },
 
@@ -24,7 +31,8 @@ module.exports = function (grunt) {
         watch: {
             any: {
                 files: ['assets/*'],
-                tasks: ['']
+                tasks: ['build'],
+                options: { livereload: true }
             }
         },
 
@@ -53,7 +61,7 @@ module.exports = function (grunt) {
         // Clean Dist dirs before build
         clean: {
             js: ['dist/js/*', '!dist/js/*.min.js'],
-            css: ['dist/css/*', '!dist/css/*.min.css']
+            css: ['dist/css/*', '!dist/css/*.min.css'],
             assets: ['dist/font/*', 'dist/fonts/*', 'dist/img/*']
         },
 
@@ -110,43 +118,62 @@ module.exports = function (grunt) {
           }
         },
 
-        uncss: {
+        // Minify HTML
+        htmlmin: {
             dist: {
-                files: [{
-                    nonull: true,
-                    src: ['http://localhost:8080/'],
-                    dest: 'dist/css/tidy.css'
-                }]
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeAttributeQuotes: true,
+                    removeRedundantAttributes: true,
+                    removeEmptyAttributes: true,
+                    minifyJS: true,
+                    minifyCSS: true,
+                    customAttrSurround: [jekyllConditionalWrapPair]
+                },
+                files: {
+                    '_layouts/homepage.html': '_layouts/homepage-min.html'
+                }
             }
-        }
+        },
+
+        // uncss: {
+        //     dist: {
+        //         files: [{
+        //             nonull: true,
+        //             src: ['http://localhost:8080/'],
+        //             dest: 'dist/css/tidy.css'
+        //         }]
+        //     }
+        // }
 
     });
 
     // Register the grunt serve only task
+    grunt.registerTask('serve-only', [
+        'shell:jekyllServe'
+    ]);
+
+    // Register the grunt development task
     grunt.registerTask('serve', [
-        'shell:jekyllRun'
+        'shell:jekyllBuildNServe'
     ]);
 
     // TESTING UNCSS
     grunt.registerTask('test', [
-        'shell:jekyllBuild',
-        'uncss'
-    ]);
-
-    // Register the grunt development task
-    grunt.registerTask('build', [
-        'shell:jekyllBuild',
-        'shell:jeky'
+        'shell:jekyllBuild'
     ]);
 
     // Register the grunt run task
-    grunt.registerTask('build-production', [
-        'copy',
+    grunt.registerTask('build', [
         'concat',
         'uglify',
         'cssmin',
         'clean',
-        'shell:jekyllRun'
+        'copy',
+        'htmlmin',
+        'shell:jekyllBuild'
     ]);
 
     // Register run as the default task fallback
@@ -158,4 +185,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-uncss');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
 };
