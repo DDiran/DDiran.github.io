@@ -14,15 +14,47 @@ module.exports = function (grunt) {
         shell: {
             jekyllRun: {
                 command: 'bundle exec jekyll serve'
+            },
+            jekyllBuild: {
+                command: 'bundle exec'
             }
+        },
+
+        // Watch for file changes
+        watch: {
+            any: {
+                files: ['assets/*'],
+                tasks: ['']
+            }
+        },
+
+        // Copy files from assets to dist
+        copy: {
+          font: {
+              expand: true,
+              cwd: 'assets/font',
+              src: '**',
+              dest: 'dist/font/'
+          },
+          fontawesome: {
+              expand: true,
+              cwd: 'assets/fonts',
+              src: '**',
+              dest: 'dist/fonts/',
+          },
+          images: {
+              expand: true,
+              cwd: 'assets/img',
+              src: '**',
+              dest: 'dist/img/',
+          }
         },
 
         // Clean Dist dirs before build
         clean: {
-            dist: {
-                js: ['dist/js/*', '!dist/js/*.min.js'],
-                css: ['dist/css/*', '!dist/css/*.min.css']
-            }
+            js: ['dist/js/*', '!dist/js/*.min.js'],
+            css: ['dist/css/*', '!dist/css/*.min.css']
+            assets: ['dist/font/*', 'dist/fonts/*', 'dist/img/*']
         },
 
         // Concatenate all JS and CSS files
@@ -36,12 +68,22 @@ module.exports = function (grunt) {
                     }
                 },
             js: {
-                src: ['assets/js/*.js'],
+                src: [
+                'assets/js/jquery-3.1.1.min.js',
+                'assets/js/popper.min.js',
+                'assets/js/mdb.min.js',
+                'assets/js/*.js'
+                ],
                 dest: 'dist/js/bundle.js'
             },
 
             css: {
-                src: ['assets/css/*.css'],
+                src: [
+                'assets/css/bootstrap.min.css',
+                'assets/css/mdb.min.css',
+                'assets/css/font-awesome.min.css',
+                'assets/css/*.css'
+                ],
                 dest: 'dist/css/bundle.css'
             }
         },
@@ -66,6 +108,16 @@ module.exports = function (grunt) {
               ext: '.min.css'
             }]
           }
+        },
+
+        uncss: {
+            dist: {
+                files: [{
+                    nonull: true,
+                    src: ['http://localhost:8080/'],
+                    dest: 'dist/css/tidy.css'
+                }]
+            }
         }
 
     });
@@ -75,8 +127,21 @@ module.exports = function (grunt) {
         'shell:jekyllRun'
     ]);
 
+    // TESTING UNCSS
+    grunt.registerTask('test', [
+        'shell:jekyllBuild',
+        'uncss'
+    ]);
+
+    // Register the grunt development task
+    grunt.registerTask('build', [
+        'shell:jekyllBuild',
+        'shell:jeky'
+    ]);
+
     // Register the grunt run task
-    grunt.registerTask('run', [
+    grunt.registerTask('build-production', [
+        'copy',
         'concat',
         'uglify',
         'cssmin',
@@ -90,6 +155,7 @@ module.exports = function (grunt) {
     // Load Grunt Tasks
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-uglify-es');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-uncss');
 };

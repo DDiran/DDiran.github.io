@@ -25,7 +25,7 @@ exclude: [
 'node_modules',
 'original',
 'licenses',
-#'assets',
+'assets',
 # files
 'Gemfile',
 'Gemfile.lock',

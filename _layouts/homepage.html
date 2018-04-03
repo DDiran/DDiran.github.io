@@ -17,15 +17,11 @@
       <link rel="alternate" hreflang="{{ p.lang }}" href="{{ p.url }}" />
     {% endfor %}
     <link rel="shortcut icon" type="image/ico" href="{{ '/favicon.ico' | absolute_url }}"/>
-    <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | absolute_url }}">
-    <link type="text/css" href="{{ '/assets/css/bootstrap.min.css' | absolute_url }}" rel="stylesheet">
-    <link type="text/css" href="{{ '/assets/css/mdb.min.css' | absolute_url }}" rel="stylesheet">
-    <link type="text/css" href="{{ '/assets/css/cssmap-continents.css' | absolute_url }}" rel="stylesheet" media="screen">
-    <link type="text/css" href="{{ '/assets/css/style.min.css' | absolute_url }}" rel="stylesheet">
+    <link type="text/css" href="{{ '/dist/css/bundle.min.css' | absolute_url }}" rel="stylesheet">
 
     <style rel="stylesheet">
     .view {
-        background: url("{{ 'assets/img/bg.jpg' | absolute_url }}")no-repeat center center fixed;
+        background: url("{{ 'dist/img/bg.jpg' | absolute_url }}")no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -46,7 +42,7 @@
                 <div class="container">
                     <ul style="margin-top:-100px">
                         <li><div class="fancy-line-two wow fadeIn" data-wow-delay="0.2s"><p class="trn lead mt-4 mb-2">{{ page.intro }}</p></div></li>
-                        <li><img id="my-portrait" class="img-fluid rounded-circle mx-auto wow fadeIn" data-wow-delay="0.2s" src="{{ '/assets/img/david_lawson.jpg' | absolute_url }}" alt="David D Lawson" width="200"></li>
+                        <li><img id="my-portrait" class="img-fluid rounded-circle mx-auto wow fadeIn" data-wow-delay="0.2s" src="{{ '/dist/img/david_lawson.jpg' | absolute_url }}" alt="David D Lawson" width="200"></li>
                         <li><h1 class="h1-responsive font-bold wow fadeIn" data-wow-delay="0.2s">David D Lawson</h1></li></li>
                         <li><h5 class="h5-responsive font-bold wow fadeInDown text-uppercase trn" data-wow-delay="0.8s">{{ page.usp1 }} &middot; {{ page.usp2 }} &middot; {{ page.usp3 }}</h2></li>
                     </ul>
@@ -58,9 +54,9 @@
     <div id="language-select">
         {% assign pages=site.pages | where:"ref", page.ref %}
         {% for p in pages %}{% if p.url == page.url %}{% assign clang = p %}{% else %}
-        <a class="lang_selector trn" href="{{ p.url }}" role="button"><img id="{{ p.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/assets/img/flags/{{ p.lang }}.jpg" alt="{{ p.lang_full }}"></a>
+        <a class="lang_selector trn" href="{{ p.url }}" role="button"><img id="{{ p.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/dist/img/flags/{{ p.lang }}.jpg" alt="{{ p.lang_full }}"></a>
         {% endif %}{% endfor %}
-        <a class="lang_selector trn" href="{{ clang.url }}" role="button"><img id="{{ clang.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/assets/img/flags/{{ clang.lang }}.jpg" alt="{{ clang.lang_full }}"></a>
+        <a class="lang_selector trn" href="{{ clang.url }}" role="button"><img id="{{ clang.lang_full }}" class="img-fluid rounded-circle img-btn" src="{{ baseurl }}/dist/img/flags/{{ clang.lang }}.jpg" alt="{{ clang.lang_full }}"></a>
         <div id="arrows">
             <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
         </div>
@@ -75,7 +71,7 @@
                         {% for project in site.data[page.lang].current_projects %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
-                               <img class="img-fluid" src="{{ site.baseurl }}/assets/img/logos/{{ project.img }}" alt="{{ project.img_alt }}" width="200">
+                               <img class="img-fluid" src="{{ site.baseurl }}/dist/img/logos/{{ project.img }}" alt="{{ project.img_alt }}" width="200">
                             </div>
                             <div class="col-md-6 center-on-small-only">
                                 <div>
@@ -98,7 +94,7 @@
                         {% for project in site.data[page.lang].past_projects %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
-                                <img class="img-fluid" src="{{ baseurl }}/assets/img/logos/{{ project.img }}" alt="{{ project.img_alt}}" width="200">
+                                <img class="img-fluid" src="{{ baseurl }}/dist/img/logos/{{ project.img }}" alt="{{ project.img_alt}}" width="200">
                             </div>
                             <div class="col-md-6 center-on-small-only">
                                 <div>
@@ -122,7 +118,7 @@
                         {% for university in site.data[page.lang].edu_history %}
                         <div class="row">
                             <div class="col-md-6 center-on-small-only">
-                                <img class="img-fluid" src="{{ baseurl }}/assets/img/logos/{{ university.img }}" alt="{{ university.img_alt }}" width="200">
+                                <img class="img-fluid" src="{{ baseurl }}/dist/img/logos/{{ university.img }}" alt="{{ university.img_alt }}" width="200">
                             </div>
                             <div class="col-md-6 center-on-small-only">
                                 <div>
@@ -173,7 +169,7 @@
                        <div class="cssmap-tooltip-content">
                         <p class="lead text-center trn">{{ pin.name }}</p><br><p class="trn">{{ pin.description }}</p>
                        </div>
-                       <a href="#" class="cssmap-marker"><img src="{{ '/assets/img/pin.png' | absolute_url }}" width="20" height="25" alt="pin"/></a>
+                       <a href="#" class="cssmap-marker"><img src="{{ '/dist/img/pin.png' | absolute_url }}" width="20" height="25" alt="pin"/></a>
                       </li>
                       {% endfor %}
                      </ul>
@@ -189,7 +185,7 @@
                     {% for interest in site.data[page.lang].interests %}
                     <div class="col-md-{% if interest.type == 'large' %}3{% else %}2{% endif %} mb-r zoom">
                         <div class="card wow fadeIn" {% if interest.wow_delay %}data-wow-delay="{{ interest.wow_delay }}"{% endif %}>
-                            <img class="img-fluid" src="{{ baseurl }}/assets/img/activities/{{ interest.img }}" alt="{{ interest.name }}">
+                            <img class="img-fluid" src="{{ baseurl }}/dist/img/activities/{{ interest.img }}" alt="{{ interest.name }}">
                             <div class="card-body">
                                 <h4 class="card-title text-center trn">{{ interest.name }}</h4>
                             </div>
@@ -213,7 +209,7 @@
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <blockquote class="mx-auto">
                         <p class="trn">"{{ author.quote }}" <br><small>{{ author.name }}</small></p>
-                        <img class="rounded-circle" src="{{ baseurl }}/assets/img/authors/{{ author.img }}" alt="{{ author.name }}">
+                        <img class="rounded-circle" src="{{ baseurl }}/dist/img/authors/{{ author.img }}" alt="{{ author.name }}">
                     </blockquote>
                 </div>
                 {% endfor %}
@@ -236,7 +232,7 @@
             </div>
             <div class="text-center pb-8">
                 <p class="lead mb-5 wow fadeInDown trn" data-wow-delay="0.4s">{{ page.brands_info }}</p>
-                <img class="img-fluid wow fadeIn" data-wow-delay="0.8s" src="{{ '/assets/img/logos/LoveBrands.jpg' | absolute_url }}" alt="Brands that I love">
+                <img class="img-fluid wow fadeIn" data-wow-delay="0.8s" src="{{ '/dist/img/logos/LoveBrands.jpg' | absolute_url }}" alt="Brands that I love">
             </div>
         </div>
     </section>
@@ -250,9 +246,9 @@
                     <p class="trn">{{ page.contact_info }}</p>
                     <br>
                     <div class="social-icons pb-5 mb-5">
-                        <a class="wow fadeIn" data-wow-delay="0.4s" href="mailto:ddiranlawson@outlook.com"><img id="email" class="img-fluid svg social-link" src="{{ '/assets/img/svg/envelope.svg' | absolute_url }}" alt="Email"></a>
-                        <a class="wow fadeIn" data-wow-delay="0.6s" href="https://www.linkedin.com/in/ddlawson/"><img id="linkedin" class="img-fluid svg social-link" src="{{ '/assets/img/svg/linked-in.svg' | absolute_url }}" alt="LinkedIn"></a>
-                        <a class="wow fadeIn" data-wow-delay="0.8s" href="https://www.instagram.com/ddiran93/"><img id="instagram" class="img-fluid svg social-link" src="{{ '/assets/img/svg/instagram.svg' | absolute_url }}" alt="Instagram"></a>
+                        <a class="wow fadeIn" data-wow-delay="0.4s" href="mailto:ddiranlawson@outlook.com"><img id="email" class="img-fluid svg social-link" src="{{ '/dist/img/svg/envelope.svg' | absolute_url }}" alt="Email"></a>
+                        <a class="wow fadeIn" data-wow-delay="0.6s" href="https://www.linkedin.com/in/ddlawson/"><img id="linkedin" class="img-fluid svg social-link" src="{{ '/dist/img/svg/linked-in.svg' | absolute_url }}" alt="LinkedIn"></a>
+                        <a class="wow fadeIn" data-wow-delay="0.8s" href="https://www.instagram.com/ddiran93/"><img id="instagram" class="img-fluid svg social-link" src="{{ '/dist/img/svg/instagram.svg' | absolute_url }}" alt="Instagram"></a>
                     </div>
                 </div>
             </div>
@@ -264,12 +260,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="{{ '/assets/js/jquery-3.1.1.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/popper.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/bootstrap.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/mdb.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/jquery.cssmap.min.js' | absolute_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/scripts.min.js' | absolute_url }}"></script>
+    <script type="text/javascript" src="{{ '/dist/js/bundle.min.js' | absolute_url }}"></script>
 
     <script>
     new WOW().init();
