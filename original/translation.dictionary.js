@@ -16,17 +16,17 @@ $(function() {
       	it: "I miei progetti attuali",
       	fr: "Mes projets actuels"
     },
-    role_one: {
+    c_role1: {
     	en: "Co-Founder, Director | 2017 (Present)",
     	it: "Co-fondatore, Direttore | 2017 (Attuale)",
     	fr: "Co-fondateur, Directeur | 2017 (Actuel)"
     },
-    location_one: {
+    c_location1: {
     	en: "Turin, Italy",
     	it: "Torino, Italia",
     	fr: "Turin, Italie"
     },
-    content_one: {
+    c_content1: {
     	en: "At Nila Expeditions we pride ourselves in building 100% bespoke itineraries to luxury destinations in East Africa. Our goal is to challenge the status quo within the African travel industry and provide truly unique experiences.",
     	it: "Nila Expeditions propone itinerari interamente personalizzati in destinazioni di lusso dell'Africa Orientale. Il nostro obiettivo è cambiare lo standard dei viaggi turistici organizzati ed offrire delle esperienze veramente uniche ed irripetibili.",
     	fr: "Nila Expeditions offre des itinearires entièrement personalizés vers les destinations de luxe de l'Afrique de l'Est. Notre but est de changer les standards des voyages organisés et offrir des esperiences vraiment uniques, completement crées sur mesure."
@@ -127,7 +127,7 @@ $(function() {
     },
     title_seven: {
     	en: "A few of my favorite things",
-    	it: "Alcune delle mie cose preferite",
+    	it: "Le mie attività preferite",
     	fr: "Quelques-unes de mes choses préférées"
     },
     "Family": {
@@ -209,7 +209,7 @@ $(function() {
     },
     title_nine: {
     	en: "We live in a world defined by brands",
-    	it: "Viviamo in un mondo definito da marche",
+    	it: "Viviamo in un mondo dominato da marche",
     	fr: "Nous vivons dans un monde défini par les marques"
     },
     "Here's a (very) small sample of some of the brands I love.": {
@@ -229,7 +229,48 @@ $(function() {
     	en: "Like my website? You can fork it on <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!",
     	it: "Ti piace il mio sito? Puoi scaricarlo gratuitamente su <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!",
     	fr: "Aimez-vous mon site? Téléchargez le gratuitemente sur <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!"
-    }
+    },
+    "United Kingdom": {
+        it: "Regno Unito",
+        fr: "Royaume-Uni"
+    },
+    "Italy": {
+        it: "Italia",
+        fr: "Italie"
+    },
+    "Kenya": {
+        it: "Kenia",
+        fr: "Kenya"
+    },
+    "Tanzania": {
+        it: "Tanzania",
+        fr: "Tanzanie"
+    },
+    title_new: {
+        en: "My background",
+        it: "La mia storia",
+        fr: "Mon histoire"
+    },
+    uk_story: {
+        en: "Between my undergrad studies and the my time in employment I spent five unforgettable years here.",
+        it: "Ho passato cinque anni indimenticabili in questo paese tra gli studi universitari e il lavoro.",
+        fr: "J'ai passé cinq années inoubliables dans ce pays parmi les études et le travail."
+    },
+    italy_story: {
+        en: "Where I spent the majority of my life, between my education and now employment. I am currently based here.",
+        it: "Dove ho passato la maggior parte della mia vita. Al momento sono basato qui a Torino.",
+        fr: "Où je passais la majeure partie de ma vie. Je suis actuellement à Turin."
+    },
+    kenya_story: {
+        en: "I was born here in Mombasa in 1993 and I spent my early childhood running around the white sandy beaches of Diani.",
+        it: "Sono nato qui a Mombasa nel 1993, trascorrendo la mia infanzia spassegiando nelle spiagge di Diani.",
+        fr: "Je suis né ici à Mombasa en 1993 et ​​j'ai passé mon enfance autour de la plage de Diani."
+    },
+    tanzania_story: {
+        en: "Where half of my family currently resides. I have been coming here regularly since 2003, and have worked for three different organisations based here.",
+        it: "Dove abita attualmente la metà della mia famiglia. Visito regolarmente dal 2003 e ho anche lavorato per tre organizzazioni che sono basate qui.",
+        fr: "C'est ici que la moitié de ma famille vit. J'ai visité régulièrement depuis 2003. J'ai aussi travaillé pour trois organisations ici."
+    },
   };
 
   var _t = $('body').translate({lang: "en", t: t});

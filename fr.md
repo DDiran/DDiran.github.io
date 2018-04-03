@@ -5,31 +5,31 @@ lang_full: Francais
 ref: home
 permalink: fr/
 
-intro: Sono
-usp1: Commercio
+intro: Je suis
+usp1: Enterprise
 usp2: Marketing
-usp3: Tecnologia
+usp3: Technologie
 
-current: Progetti attuali
-past: Il mio lavoro
-edu: I miei studi
+current: Mes projets actuels
+past: Mon travail
+edu: Mes études
 
-download: Altre informazioni
+download: Informations Additionnelles
 additional_info: >
-  Per scoprire di più potete scaricare il mio CV e le mie referenze.
-  Altrimenti potete esplorare il mio profilo su LinkedIn.
+    Pour savoir en plus, téléchargez mon CV et mes références.
+    Alternativement, n'hésitez pas à consulter mon profil LinkedIn.
 
-d_text: Scarica CV
-m_text: Scopri di piu
+d_text: Télécharger CV
+m_text: Encore
 cv_download_url: https://1drv.ms/u/s!Ak8GN1MKJDHvgd1XlmNWDmhkThbABQ
 linkedin_url: https://www.linkedin.com/in/ddlawson/
 
 background: Le mie esperienze
-favourite: Le mie attività preferite
-inspiration: La mia ispirazione giornaliera
-brands: Viviamo in un mondo animato dai brand
-brands_info: Ecco una (piccola) selezione delle mie preferite
-contact: Contattami
-contact_info: Sono sempre aperto alle opportunià nuove. Per contattarmi usate uno dei link sottostanti.
-copyright: Ti piace il mio sito? Puoi scaricarlo gratuitamente su <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!
+favourite: Quelques-unes de mes choses préférées
+inspiration: Mon inspiration quotidienne
+brands: Nous vivons dans un monde défini par les marques
+brands_info: Voici une (petite) illustration de quelques marques que j'aime.
+contact: Contactez moi
+contact_info: Je suis toujours ouvert à de nouvelles opportunités - entrez en contact avec l'un des liens ci-dessous.
+copyright: Aimez-vous mon site? Téléchargez le gratuitemente sur <a href='https://github.com/DDiran/DDiran.github.io'>GitHub<a/>!
 ---

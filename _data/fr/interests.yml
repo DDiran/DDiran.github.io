@@ -1,30 +1,30 @@
 - type: large
   img: family.jpg
-  name: Family
+  name: Familie
 
 - type: large
   img: music.jpg
-  name: Music
+  name: Musique
   wow_delay: "0.4s"
 
 - type: large
   img: snowboarding.jpg
-  name: Snowboarding
+  name: Snowboard
   wow_delay: "0.6s"
 
 - type: large
   img: mountains.jpg
-  name: Trekking
+  name: Montagnes
   wow_delay: "0.8s"
 
 - type: small
   img: travel.jpg
-  name: Travel
+  name: Voyager
   wow_delay: "0.2s"
 
 - type: small
   img: beachlife.jpg
-  name: Beach Life
+  name: Plage
   wow_delay: "0.4s"
 
 - type: small
