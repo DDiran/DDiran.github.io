@@ -1,7 +1,7 @@
 ### Site Settings
 name: I'm David D Lawson
 title: David D Lawson
-destination: ./docs
+destination: docs
 
 ### Multilingual Settings
 t:
@@ -14,11 +14,11 @@ t:
 
 ### Website URL Settings
 # Development 
-url: ""
-baseurl: ""
+# url: ""
+# baseurl: ""
 # Production
-# url: http://ddlawson.com
-# baseurl: http://ddlawson.com
+url: http://ddlawson.com
+baseurl: http://ddlawson.com
 
 ### Exclude Settings
 exclude: [
@@ -40,10 +40,9 @@ exclude: [
 ]
 
 ### Stop Jekyll from overwriting Grunt-minified HTML files
-exclude: ['index.html', 'it/index.html', fr/index.html]
-keep_files: ['index.html', 'it/index.html', fr/index.html]
+keep_files: ['**/*.html'] # ['index.html', 'it/index.html', fr/index.html]
 
 ### Other Settings
-layouts_dir: _layouts_min
-strict_front_matter: true
+layouts_dir: _layouts
+strict_front_matter: false #true
 markdown: kramdown

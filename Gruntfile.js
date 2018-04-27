@@ -131,9 +131,12 @@ module.exports = function (grunt) {
                     minifyJS: true,
                     minifyCSS: true
                 },
-                files: {
-                    '_layouts/homepage.html': '_layouts_min/homepage.html'
-                }
+                files: [{
+                  expand: true,
+                  cwd: 'docs',
+                  src: ['**/*.html', '!perf/**/*.html'],
+                  dest: 'docs'
+        }]
             }
         },
 
@@ -170,7 +173,6 @@ module.exports = function (grunt) {
         'build',
         'shell:jekyllBuild',
         'shell:jekyllServe',
-        'htmlmin'
     ]);
 
     // TESTING UNCSS
@@ -186,6 +188,7 @@ module.exports = function (grunt) {
         'copy',
         'imagemin',
         'svgmin',
+        'htmlmin'
         
     ]);
 
