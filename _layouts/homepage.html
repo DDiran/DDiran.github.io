@@ -28,14 +28,14 @@
         background-size: cover;
     }
     </style>
-
-    {% comment %}{% include _analytics.html %}{% endcomment %}
-
-    {% comment %}{% include _cookie_consent.html %}{% endcomment %}
+    {% if jekyll.environment == "production" %}
+    {% include _analytics.html %}
+    {% include _cookie_consent.html %}
+    {% endif %}
 </head>
 
 <body>
-    {% comment %}{% include _gtm.html %}{% endcomment %}
+    {% if jekyll.environment == "production" %}{% include _gtm.html %}{% endif %}
     <header>
         <section class="view intro-1 hm-black-strong">
             <div class="full-bg-img flex-center">

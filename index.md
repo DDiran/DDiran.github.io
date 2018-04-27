@@ -1,5 +1,5 @@
 ---
-layout: homepage-min
+layout: homepage
 lang: en
 lang_full: English
 ref: home

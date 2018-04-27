@@ -1,18 +1,22 @@
 'use strict';
 
-var jekyllConditionalWrapOpen = /\{\% if[^}]+\%\}/;
-var jekyllConditionalWrapClose = /\{\%[^}]+endif \%\}/;
-var jekyllConditionalWrapPair = [jekyllConditionalWrapOpen, jekyllConditionalWrapClose];
-
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
     require('time-grunt')(grunt);
     // Load all Grunt tasks that are listed in package.json automagically
     require('load-grunt-tasks')(grunt);
+    // Require mozjpeg
+    // const mozjpeg = require('imagemin-mozjpeg');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        // Configurable paths | <%= ddlawson.app %>/
+        ddlawson: {
+            app: 'app',
+            dist: 'dist'
+        },
 
         // shell commands for use in Grunt tasks
         shell: {
@@ -20,7 +24,7 @@ module.exports = function (grunt) {
                 command: 'bundle exec jekyll serve'
             },
             jekyllBuild: {
-                command: 'bundle'
+                command: 'jekyll build'
             },
             jekyllServe: {
                 command: 'jekyll serve'
@@ -30,7 +34,7 @@ module.exports = function (grunt) {
         // Watch for file changes
         watch: {
             any: {
-                files: ['assets/*'],
+                files: ['assets/**/*', '_layouts/*', '_includes/*'],
                 tasks: ['build'],
                 options: { livereload: true }
             }
@@ -49,58 +53,25 @@ module.exports = function (grunt) {
               cwd: 'assets/fonts',
               src: '**',
               dest: 'dist/fonts/',
-          },
-          images: {
-              expand: true,
-              cwd: 'assets/img',
-              src: '**',
-              dest: 'dist/img/',
           }
         },
 
         // Clean Dist dirs before build
         clean: {
-            js: ['dist/js/*', '!dist/js/*.min.js'],
-            css: ['dist/css/*', '!dist/css/*.min.css'],
-            assets: ['dist/font/*', 'dist/fonts/*', 'dist/img/*']
-        },
-
-        // Concatenate all JS and CSS files
-        concat: {
-            options: {
-                stripBanners: {
-                    options: {
-                        block: true,
-                        line: true
-                        },
-                    }
-                },
-            js: {
-                src: [
-                'assets/js/jquery-3.1.1.min.js',
-                'assets/js/popper.min.js',
-                'assets/js/mdb.min.js',
-                'assets/js/*.js'
-                ],
-                dest: 'dist/js/bundle.js'
-            },
-
-            css: {
-                src: [
-                'assets/css/bootstrap.min.css',
-                'assets/css/mdb.min.css',
-                'assets/css/font-awesome.min.css',
-                'assets/css/*.css'
-                ],
-                dest: 'dist/css/bundle.css'
-            }
+            assets: ['dist/**/*'],
+            site: ['docs/**/*'],
         },
 
         // JS Uglify Plugins
         uglify: {
             target: {
               files: {
-                'dist/js/bundle.min.js': ['dist/js/bundle.js']
+                'dist/js/bundle.min.js': [
+                'assets/js/jquery-3.1.1.min.js',
+                'assets/js/popper.min.js',
+                'assets/js/mdb.min.js',
+                'assets/js/*.js'
+                ],
               }
             }
           },
@@ -109,14 +80,43 @@ module.exports = function (grunt) {
         cssmin: {
           target: {
             files: [{
-              expand: true,
-              cwd: 'dist/css',
-              src: ['bundle.css'],
-              dest: 'dist/css',
-              ext: '.min.css'
+              'dist/css/bundle.min.css': [
+                'assets/css/bootstrap.min.css',
+                'assets/css/mdb.min.css',
+                'assets/css/font-awesome.min.css',
+                'assets/css/*.css'
+                ],
             }]
           }
         },
+
+        // Image compression
+        imagemin: {
+            options: {
+                progressive: true
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/img',
+                    src: '**/*.{jpg,jpeg,png,gif}',
+                    dest: 'dist/img',
+                }]
+            }
+        },
+
+        // SVG Compression
+        svgmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/img',
+                    src: '**/*.svg',
+                    dest: 'dist/img',
+                }]
+            }
+        },
+
 
         // Minify HTML
         htmlmin: {
@@ -129,12 +129,22 @@ module.exports = function (grunt) {
                     removeRedundantAttributes: true,
                     removeEmptyAttributes: true,
                     minifyJS: true,
-                    minifyCSS: true,
-                    customAttrSurround: [jekyllConditionalWrapPair]
+                    minifyCSS: true
                 },
                 files: {
-                    '_layouts/homepage.html': '_layouts/homepage-min.html'
+                    '_layouts/homepage.html': '_layouts_min/homepage.html'
                 }
+            }
+        },
+
+        // run tasks in parallel
+        concurrent: {
+            serve: [
+                'watch',
+                'shell:jekyllServe'
+            ],
+            options: {
+                logConcurrentOutput: true
             }
         },
 
@@ -157,7 +167,10 @@ module.exports = function (grunt) {
 
     // Register the grunt development task
     grunt.registerTask('serve', [
-        'shell:jekyllBuildNServe'
+        'build',
+        'shell:jekyllBuild',
+        'shell:jekyllServe',
+        'htmlmin'
     ]);
 
     // TESTING UNCSS
@@ -167,24 +180,24 @@ module.exports = function (grunt) {
 
     // Register the grunt run task
     grunt.registerTask('build', [
-        'concat',
+        'clean',
         'uglify',
         'cssmin',
-        'clean',
         'copy',
-        'htmlmin',
-        'shell:jekyllBuild'
+        'imagemin',
+        'svgmin',
+        
     ]);
 
     // Register run as the default task fallback
     grunt.registerTask('default', 'serve');
 
     // Load Grunt Tasks
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin')
 
 };
