@@ -18,7 +18,7 @@ t:
 # baseurl: ""
 # Production
 url: http://ddlawson.com
-baseurl: http://ddlawson.com
+# baseurl: http://ddlawson.com
 environment: production
 
 ### Exclude Settings
