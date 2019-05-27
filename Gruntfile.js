@@ -171,8 +171,8 @@ module.exports = function (grunt) {
     // Register the grunt development task
     grunt.registerTask('serve', [
         'build',
-        'shell:jekyllBuild',
-        'shell:jekyllServe',
+        'shell:jekyllBuildNServe',
+        // 'shell:jekyllServe',
     ]);
 
     // TESTING UNCSS
@@ -189,7 +189,7 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin',
         'htmlmin'
-        
+
     ]);
 
     // Register run as the default task fallback
