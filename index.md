@@ -7,7 +7,7 @@ permalink: /
 
 intro: Hi I'm
 usp1: Business
-usp2: Marketing
+usp2: Project Management
 usp3: Technology
 
 current: My current projects

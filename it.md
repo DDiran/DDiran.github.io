@@ -7,7 +7,7 @@ permalink: it/
 
 intro: Sono
 usp1: Commercio
-usp2: Marketing
+usp2: Gestione Progetti
 usp3: Tecnologia
 
 current: Progetti attuali
